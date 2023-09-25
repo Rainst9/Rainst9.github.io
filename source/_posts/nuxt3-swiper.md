@@ -1,5 +1,11 @@
 ---
 title: nuxt3 中使用最新版本 swiper
+categories:
+  - 技术
+  - 前端
+tags:
+  - nuxt3
+  - swiper
 ---
 
 # 一、前言
