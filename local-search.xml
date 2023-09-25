@@ -4,13 +4,85 @@
   
   
   <entry>
+    <title>情绪日记本</title>
+    <link href="/2023/09/25/emotion-diary/"/>
+    <url>/2023/09/25/emotion-diary/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>虽然外表看起来不像，但我确实是一个敏感的人，我对于别人情绪的变化感知的很细节、很快速。同时，我内心深处也在意别人的看法，觉得我时时处于众人目光之下，非常容易紧张、害羞、胆小，甚至某些时候易怒。</p><p>尽管随着工作时间变长，我这些问题在逐步改善，但是我觉得还不够，身上的怯弱、社恐、不敢为自己发声之类的问题还需要继续解决，这里我准备借鉴赵永久老师的建议，每当这些情绪来临时，不要急于逃避，要去感受它，去不断感受它给你带来的情绪的变化（虽然这并不让人舒服），并思考它为什么会发生，背后的原因是什么？是自己的自卑？还是内心深处隐藏的恐惧？这能否解决？我相信，同样的情绪记录四五次，肯定会有改善的。</p><h1 id="2023年"><a href="#2023年" class="headerlink" title="2023年"></a>2023年</h1><h2 id="9月25日"><a href="#9月25日" class="headerlink" title="9月25日"></a>9月25日</h2><ul><li>给别人布置任务，但是都一致给否定答案时</li><li>自己的东西被人否定，而我一时无法解决时的慌张、不耐烦、转移问题，不聚焦事情本身</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>个人成长</category>
+      
+      <category>日记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>情绪</tag>
+      
+      <tag>记录</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>nuxt3 中使用最新版本 swiper</title>
-    <link href="/2023/09/04/nuxt3-swiper/"/>
-    <url>/2023/09/04/nuxt3-swiper/</url>
+    <link href="/2023/09/25/nuxt3-swiper/"/>
+    <url>/2023/09/25/nuxt3-swiper/</url>
     
     <content type="html"><![CDATA[<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>公司实习生重构官网时使用了 nuxt3，但是在用 swiper 时却卡住了，找我帮忙看下，我原以为随便一搜，10 分钟内搞定，但是竟花了不少功夫，因为目前关于这类的文章要不太久，要不太乱，参考性不大，所以将最新解决方案记录下来。</p><h1 id="二、目标"><a href="#二、目标" class="headerlink" title="二、目标"></a>二、目标</h1><p>nuxt3 中使用最新版本的 swiper。</p><h1 id="三、实现"><a href="#三、实现" class="headerlink" title="三、实现"></a>三、实现</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">swiper</span></span></span><br><span class="hljs-tag"><span class="language-xml">    <span class="hljs-attr">:direction</span>=<span class="hljs-string">&quot;&#x27;vertical&#x27;&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">    <span class="hljs-attr">:pagination</span>=<span class="hljs-string">&quot;&#123;</span></span></span><br><span class="hljs-string"><span class="hljs-tag"><span class="language-xml">      clickable: true,</span></span></span><br><span class="hljs-string"><span class="hljs-tag"><span class="language-xml">    &#125;&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">    <span class="hljs-attr">:modules</span>=<span class="hljs-string">&quot;modules&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">  &gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">swiper-slide</span>&gt;</span>Slide 1<span class="hljs-tag">&lt;/<span class="hljs-name">swiper-slide</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">swiper-slide</span>&gt;</span>Slide 2<span class="hljs-tag">&lt;/<span class="hljs-name">swiper-slide</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">swiper-slide</span>&gt;</span>Slide 3<span class="hljs-tag">&lt;/<span class="hljs-name">swiper-slide</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">swiper-slide</span>&gt;</span>Slide 4<span class="hljs-tag">&lt;/<span class="hljs-name">swiper-slide</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">swiper-slide</span>&gt;</span>Slide 5<span class="hljs-tag">&lt;/<span class="hljs-name">swiper-slide</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">swiper-slide</span>&gt;</span>Slide 6<span class="hljs-tag">&lt;/<span class="hljs-name">swiper-slide</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">swiper</span>&gt;</span></span><br>&lt;/template&gt;<br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="language-javascript"><span class="language-xml">  <span class="hljs-comment">// 导入 Swiper、SwiperSlide 组件</span></span></span><br><span class="language-javascript"><span class="language-xml">  <span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Swiper</span>, <span class="hljs-title class_">SwiperSlide</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;swiper/vue&#x27;</span>;</span></span><br><span class="language-javascript"><span class="language-xml">  <span class="hljs-comment">// 导入 Swiper 基础样式</span></span></span><br><span class="language-javascript"><span class="language-xml">  <span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;swiper/css&#x27;</span>;</span></span><br><span class="language-javascript"><span class="language-xml">  <span class="hljs-comment">// 导入 Pagination 模块样式</span></span></span><br><span class="language-javascript"><span class="language-xml">  <span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;swiper/css/pagination&#x27;</span>;</span></span><br><span class="language-javascript"><span class="language-xml">  <span class="hljs-comment">// 导入 Pagination 模块</span></span></span><br><span class="language-javascript"><span class="language-xml">  <span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Pagination</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;swiper/modules&#x27;</span>;</span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml">  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span></span><br><span class="language-javascript"><span class="language-xml">    <span class="hljs-attr">components</span>: &#123;</span></span><br><span class="language-javascript"><span class="language-xml">      <span class="hljs-title class_">Swiper</span>,</span></span><br><span class="language-javascript"><span class="language-xml">      <span class="hljs-title class_">SwiperSlide</span></span></span><br><span class="language-javascript"><span class="language-xml">    &#125;,</span></span><br><span class="language-javascript"><span class="language-xml">    <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) &#123;</span></span><br><span class="language-javascript"><span class="language-xml">      <span class="hljs-keyword">return</span> &#123;</span></span><br><span class="language-javascript"><span class="language-xml">        <span class="hljs-attr">modules</span>: [<span class="hljs-title class_">Pagination</span>]</span></span><br><span class="language-javascript"><span class="language-xml">      &#125;;</span></span><br><span class="language-javascript"><span class="language-xml">    &#125;</span></span><br><span class="language-javascript"><span class="language-xml">  &#125;;</span></span><br><span class="language-javascript"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="language-css"><span class="language-xml"><span class="hljs-selector-id">#__nuxt</span> &#123;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;</span></span><br><span class="language-css"><span class="language-xml">&#125;</span></span><br><span class="language-css"><span class="language-xml"></span></span><br><span class="language-css"><span class="language-xml"><span class="hljs-selector-tag">html</span>,</span></span><br><span class="language-css"><span class="language-xml"><span class="hljs-selector-tag">body</span> &#123;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">position</span>: relative;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;</span></span><br><span class="language-css"><span class="language-xml">&#125;</span></span><br><span class="language-css"><span class="language-xml"></span></span><br><span class="language-css"><span class="language-xml"><span class="hljs-selector-tag">body</span> &#123;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">background</span>: <span class="hljs-number">#eee</span>;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">font-family</span>: Helvetica Neue, Helvetica, Arial, sans-serif;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">14px</span>;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;</span></span><br><span class="language-css"><span class="language-xml">&#125;</span></span><br><span class="language-css"><span class="language-xml"></span></span><br><span class="language-css"><span class="language-xml"><span class="hljs-selector-class">.swiper</span> &#123;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-comment">/* width: 500px;</span></span></span><br><span class="hljs-comment"><span class="language-css"><span class="language-xml">  height: 500px; */</span></span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red;</span></span><br><span class="language-css"><span class="language-xml">&#125;</span></span><br><span class="language-css"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br></code></pre></td></tr></table></figure><p>代码其实很简单，但有一点<strong>需要注意，那就是 .swiper 的宽高要给对</strong>。我一开始照着官方文档的例子写的时候，轮播是出来了，但是垂直轮播的效果没有，排查了才发现，例子里 .swiper 的宽高是百分比，它继承的是 #app 的宽高，但是我用的 nuxt3，里面没有 #app，只有 #__nuxt。</p><p>实现效果如下：<br><img src="/./imgs/nuxt-swiper.gif" alt="nuxt-swiper.gif"></p><h1 id="四、个人收获"><a href="#四、个人收获" class="headerlink" title="四、个人收获"></a>四、个人收获</h1><p>解决问题，还是优先看官方文档。当然，如果文档晦涩难懂，或者过长不方便查找时，对症进行谷歌搜索也是可以的，灵活搭配。</p><h1 id="五、源码"><a href="#五、源码" class="headerlink" title="五、源码"></a>五、源码</h1><p><a href="https://github.com/Rainst9/article-example/tree/main/nuxt3-swiper">nuxt3-swiper</a></p><h1 id="六、参考链接"><a href="#六、参考链接" class="headerlink" title="六、参考链接"></a>六、参考链接</h1><ol><li><a href="https://swiperjs.com/demos#vertical">swiper</a></li></ol>]]></content>
     
     
+    <categories>
+      
+      <category>技术</category>
+      
+      <category>前端</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>nuxt3</tag>
+      
+      <tag>swiper</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>成功日记本</title>
+    <link href="/2023/09/25/success-diary/"/>
+    <url>/2023/09/25/success-diary/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>据说与成功相比，人的大脑更容易记住失败，所以我们在自己心中的形象总体会比实际的差很多。现实中我的感受也是如此，每当别人说我哪里很好的时候，我会觉得这不是真的，他一定是在骗我，这也反映了个人的不自信。所以为了系统的建立自信，正确的认识自己，我决定按照博多·舍费尔老师的建议，记录自己成功的事件，无论大小，坚持每天记录，期待自己能看到效果。</p><h1 id="2023年"><a href="#2023年" class="headerlink" title="2023年"></a>2023年</h1><h2 id="9月25日"><a href="#9月25日" class="headerlink" title="9月25日"></a>9月25日</h2><ol><li>想了两周要开始写这个日记本，终于今天启动了，迈出了第一步，很棒，继续坚持 ✊</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>个人成长</category>
+      
+      <category>日记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>记录</tag>
+      
+    </tags>
     
   </entry>
   
