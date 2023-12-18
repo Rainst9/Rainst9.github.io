@@ -24,3 +24,10 @@ tags:
 ![](../imgs/blender-introduction/2023-12-05-21-08-34.png)
 ![](../imgs/blender-introduction/2023-12-05-21-09-42.png)
 ![](../imgs/blender-introduction/2023-12-05-21-10-11.png)
+## 6.2 挤出面
+![](../imgs/blender-introduction/2023-12-18-20-00-49.png)
+![](../imgs/blender-introduction/2023-12-18-20-04-55.png)
+## 6.3 内插面
+![](../imgs/blender-introduction/2023-12-18-20-17-07.png)
+![](../imgs/blender-introduction/2023-12-18-20-26-14.png)
+![](../imgs/blender-introduction/2023-12-18-20-37-13.png)
