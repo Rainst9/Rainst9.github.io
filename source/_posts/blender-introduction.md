@@ -31,3 +31,7 @@ tags:
 ![](../imgs/blender-introduction/2023-12-18-20-17-07.png)
 ![](../imgs/blender-introduction/2023-12-18-20-26-14.png)
 ![](../imgs/blender-introduction/2023-12-18-20-37-13.png)
+## 6.4 尖分面、面三角化、融并面
+![](../imgs/blender-introduction/2023-12-20-20-19-07.png)
+![](../imgs/blender-introduction/2023-12-20-20-20-46.png)
+![](../imgs/blender-introduction/2023-12-20-20-21-07.png)
